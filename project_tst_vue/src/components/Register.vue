@@ -9,9 +9,9 @@
         <label for="email" class="form-label">Email:</label>
         <input type="email" v-model="user.email" class="form-control" required />
       </div>
-      <div class="mb-3">
+      <div v-if="!isEditing" class="mb-3">
         <label for="password" class="form-label">Senha:</label>
-        <input type="password" v-model="user.password" class="form-control" :required="!isEditing" />
+        <input type="password" v-model="user.password" class="form-control" required />
         <div v-if="errors.password" class="text-danger">{{ errors.password[0] }}</div>
       </div>
       <div class="mb-3">
